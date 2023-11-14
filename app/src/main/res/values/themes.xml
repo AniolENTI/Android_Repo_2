@@ -22,6 +22,10 @@
 
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/ModulDosFirebaseCDI.Toolbar</item>
+        <item name="materialCardViewStyle">@style/ModulDosFirebaseCDI.CardView</item>
+        <item name="textInputStyle">@style/ModulDosFirebaseCDI.Input</item>
+        <item name="materialButtonStyle">@style/ModulDosFirebaseCDI.Button</item>
+        <item name="extendedFloatingActionButtonStyle">@style/ModulDosFirebaseCDI.FloatingButtonExtended</item>
         <!-- Shadow setup. -->
         <item name="android:ambientShadowAlpha">0.7</item>
         <item name="android:spotShadowAlpha">0.7</item>
@@ -32,4 +36,28 @@
         <item name="android:background">@color/base_grey</item>
         <item name="elevation">@dimen/shadow_elevation</item>
     </style>
+    <style name="ModulDosFirebaseCDI.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/shadow_elevation</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.Input" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeWidth">@dimen/tiny</item>
+        <item name="boxStrokeWidthFocused">@dimen/tiny</item>
+        <item name="boxStrokeErrorColor">@color/base_red</item>
+        <item name="android:textColorHint">@color/base_light</item>
+        <item name="hintTextColor">@color/lighter_light</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/base_light</item>
+        <item name="backgroundTint">@color/base_grey</item>
+        <item name="rippleColor">@color/darkest_light</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">@dimen/shadow_elevation</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.Button.NoShadow" parent="ModulDosFirebaseCDI.Button">
+        <item name="android:elevation">0dp</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.FloatingButtonExtended" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="elevation">0dp</item>
+    </style>
+
 </resources>
