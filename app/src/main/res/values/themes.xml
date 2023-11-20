@@ -8,13 +8,15 @@
         <item name="colorPrimary">@color/base_light</item>
         <item name="colorPrimaryVariant">@color/lighter_light</item>
         <item name="colorOnPrimary">@color/base_grey</item>
+        <item name="android:textColorPrimary"> @color/base_light</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/base_grey</item>
         <item name="colorSecondaryVariant">@color/lighter_grey</item>
         <item name="colorOnSecondary">@color/base_light</item>
+        <item name="android:textColorSecondary">@color/debug_color</item>
         <!-- Surface color. -->
         <item name="colorSurface">?attr/colorSecondary</item>
-        <item name="colorOnSurface">?attr/colorOnSecondary</item>
+        <item name="colorOnSurface">@color/clear_color</item>
         <!-- Background app. -->
         <item name="android:colorBackground">?attr/colorPrimary</item>
         <!-- Status bar color. -->
@@ -22,6 +24,7 @@
 
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/ModulDosFirebaseCDI.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/ModulDosFirebaseCDI.BottomBar</item>
         <item name="materialCardViewStyle">@style/ModulDosFirebaseCDI.CardView</item>
         <item name="textInputStyle">@style/ModulDosFirebaseCDI.Input</item>
         <item name="materialButtonStyle">@style/ModulDosFirebaseCDI.Button</item>
@@ -35,6 +38,12 @@
     <style name="ModulDosFirebaseCDI.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">@color/base_grey</item>
         <item name="elevation">@dimen/shadow_elevation</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.BottomBar" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/base_grey</item>
+        <item name="android:elevation">@dimen/shadow_elevation</item>
+        <item name="itemIconTint">@color/selectables_buttons_color</item>
+        <item name="rippleColor">@color/base_light_alpha_low</item>
     </style>
     <style name="ModulDosFirebaseCDI.CardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">@dimen/shadow_elevation</item>

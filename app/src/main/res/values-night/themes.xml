@@ -3,15 +3,6 @@
     <style name="Theme.ModulDosFirebaseCDI" parent="Theme.ModulDosFirebaseCDI.base">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/base_grey</item>
-        <item name="colorPrimaryVariant">@color/lighter_grey</item>
-        <item name="colorOnPrimary">@color/base_light</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/base_light</item>
-        <item name="colorSecondaryVariant">@color/lighter_light</item>
-        <item name="colorOnSecondary">@color/base_grey</item>
-        <!-- Surface color. -->
-        <item name="colorSurface">?attr/colorSecondary</item>
-        <item name="colorOnSurface">?attr/colorOnSecondary</item>
 
     </style>
 </resources>

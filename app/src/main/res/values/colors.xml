@@ -14,9 +14,11 @@
     <color name="base_light">#EDDC90</color>
     <color name="lighter_light">#F3E8C3</color>
     <color name="darkest_light">#978C5C</color>
+    <color name="base_light_alpha_medium">#80EDDC90</color>
+    <color name="base_light_alpha_low">#40EDDC90</color>
 
 
-    //IndicationColors
+//IndicationColors
     <color name="base_red">#661209</color>
     <color name="base_green">#1F422C</color>
     <color name="base_blue">#012B54</color>
