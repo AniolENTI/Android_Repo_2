@@ -38,6 +38,7 @@
     <style name="ModulDosFirebaseCDI.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">@color/base_grey</item>
         <item name="elevation">@dimen/shadow_elevation</item>
+        <item name="navigationIconTint">@color/base_light</item>
     </style>
     <style name="ModulDosFirebaseCDI.BottomBar" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="android:background">@color/base_grey</item>

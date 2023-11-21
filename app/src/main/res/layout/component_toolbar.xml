@@ -8,7 +8,9 @@
         android:id="@+id/appToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="ModulDosFirebaseCDI">
+        app:title="ModulDosFirebaseCDI"
+        app:navigationIcon="@drawable/toolbar_navigation_icon"
+        app:menu="@menu/toolbar_base_menu">
     </com.google.android.material.appbar.MaterialToolbar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
