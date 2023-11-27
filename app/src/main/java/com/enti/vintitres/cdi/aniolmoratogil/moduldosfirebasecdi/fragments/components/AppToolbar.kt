@@ -6,7 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.R
+import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.classes.firebase.FB
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
+import com.google.firebase.crashlytics.setCustomKeys
+import java.lang.Exception
 
 class AppToolbar: Fragment() {
 
@@ -45,7 +50,12 @@ class AppToolbar: Fragment() {
 
             when(menuItem.itemId) {
                 R.id.toolbar_button_test -> {
-
+                    //throw RuntimeException("Test Crash") // Force a crash
+                    FB.crashlytics.logSimpleError("Subnormal Error"){
+                        key("Subnormal Name", "Aniol")
+                        key("Is Subnormal", true)
+                        key("Level Of Subnormality", 9001)
+                    }
                 }
             }
 
