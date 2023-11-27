@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "210964673429",
+    "project_id": "moduldosfirebasecdi-aniolm",
+    "storage_bucket": "moduldosfirebasecdi-aniolm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210964673429:android:399a84e1c61d2b9464bc9c",
+        "android_client_info": {
+          "package_name": "com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYQJ4jDoHGLElHLCY6aj8A7v6INwT2s-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
