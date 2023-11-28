@@ -43,7 +43,7 @@ class AppToolbar: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.setNavigationOnClickListener {
-
+            AppDrawer.get().openDrawer()
         }
 
         toolbar.setOnMenuItemClickListener { menuItem ->

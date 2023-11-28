@@ -6,39 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navigationDrawerContainer"
+        android:name="com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.components.AppDrawer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/componentToolbarContainer"
-            android:name="com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.components.AppToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            tools:layout="@layout/component_toolbar">
-        </androidx.fragment.app.FragmentContainerView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/componentNavhostContainer"
-            android:name="com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.components.AppNavHost"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/component_navhost"
-            android:layout_below="@id/componentToolbarContainer"
-            android:layout_above="@id/componentNavigationBottomBarContainer">
-        </androidx.fragment.app.FragmentContainerView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/componentNavigationBottomBarContainer"
-            android:name="com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.components.AppBottomBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            tools:layout="@layout/component_bottombar">
-        </androidx.fragment.app.FragmentContainerView>
-
-
-    </RelativeLayout>
+        android:layout_height="match_parent"
+        tools:layout="@layout/component_navigationdrawer">
+    </androidx.fragment.app.FragmentContainerView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
