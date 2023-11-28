@@ -12,7 +12,20 @@
           "package_name": "com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "210964673429-eet9ipri0de08k5vru2m4pdsmmc3i8qj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi",
+            "certificate_hash": "92f06bd0782d17ec8dccc46bcdbd7add98772b43"
+          }
+        },
+        {
+          "client_id": "210964673429-407bq6d2u77i2km7eteerifcjor1lbt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBYQJ4jDoHGLElHLCY6aj8A7v6INwT2s-g"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210964673429-407bq6d2u77i2km7eteerifcjor1lbt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

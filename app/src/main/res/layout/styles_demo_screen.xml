@@ -75,9 +75,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/CardviewPassword"
-            android:layout_margin="@dimen/margin_normal"
-            android:text="Hello World">
-        </com.google.android.material.button.MaterialButton>
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:text="Hello World"></com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/materialButtonNoShadow"
