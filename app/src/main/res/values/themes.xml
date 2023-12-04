@@ -30,6 +30,8 @@
         <item name="textInputStyle">@style/ModulDosFirebaseCDI.Input</item>
         <item name="materialButtonStyle">@style/ModulDosFirebaseCDI.Button</item>
         <item name="extendedFloatingActionButtonStyle">@style/ModulDosFirebaseCDI.FloatingButtonExtended</item>
+        <item name="snackbarStyle">@style/ModulDosFirebaseCDI.SnackBar</item>
+        <item name="snackbarTextViewStyle">@style/ModulDosFirebaseCDI.SnackBar.TextView</item>
         <!-- Shadow setup. -->
         <item name="android:ambientShadowAlpha">0.7</item>
         <item name="android:spotShadowAlpha">0.7</item>
@@ -77,6 +79,12 @@
     </style>
     <style name="ModulDosFirebaseCDI.FloatingButtonExtended" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
         <item name="elevation">0dp</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.SnackBar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="elevation">@dimen/shadow_elevation</item>
+    </style>
+    <style name="ModulDosFirebaseCDI.SnackBar.TextView" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">@color/base_light</item>
     </style>
 
 </resources>

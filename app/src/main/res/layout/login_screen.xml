@@ -38,7 +38,6 @@
             android:id="@+id/passwordInputContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/usernameInputContainer"
             android:layout_margin="@dimen/margin_normal"
             >
 
@@ -62,7 +61,6 @@
             android:id="@+id/verifyPasswordInputContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/passwordInputContainer"
             android:layout_margin="@dimen/margin_normal"
             android:visibility="gone"
             app:endIconMode="password_toggle"
@@ -88,23 +86,23 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/verifyPasswordInputContainer"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
-            android:text="@string/login_title"></com.google.android.material.button.MaterialButton>
+            android:text="@string/login_title">
+        </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/loginButton"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
-            android:text="@string/register_title"></com.google.android.material.button.MaterialButton>
+            android:text="@string/register_title">
+        </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"

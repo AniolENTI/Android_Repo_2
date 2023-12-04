@@ -9,4 +9,7 @@
     <string name="back_to_login_button">Return to Login</string>
     <string name="end_register_button">Finish Register</string>
     <string name="register_title">Register</string>
+    <string name="login_error">Error on Try Login</string>
+    <string name="user_login_message">Hello %s you are loged</string>
+    <string name="unknown_user">User Unknown</string>
 </resources>

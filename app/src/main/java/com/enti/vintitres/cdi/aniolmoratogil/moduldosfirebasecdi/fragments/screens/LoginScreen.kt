@@ -1,14 +1,21 @@
 package com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.screens
 
+import android.app.Activity.RESULT_OK
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.R
+import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.classes.firebase.FB
+import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.components.AppDrawer
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.gms.common.SignInButton
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 
 class LoginScreen: Fragment() {
@@ -28,6 +35,9 @@ class LoginScreen: Fragment() {
     val registerButton by lazy { fragmentView.findViewById<MaterialButton>(R.id.registerButton) }
     val googleAuthButton by lazy { fragmentView.findViewById<SignInButton>(R.id.loginGoogleButton) }
 
+    val signInLauncher = registerForActivityResult(FirebaseAuthUIActivityResultContract()) { res->
+        this.onSignInResult(res)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +93,39 @@ class LoginScreen: Fragment() {
 
     private fun googleAuth()
     {
+        val providers = arrayListOf(
+            //AuthUI.IdpConfig.EmailBuilder().build(),
+            AuthUI.IdpConfig.GoogleBuilder().build()
+            )
 
+        val signInIntent = AuthUI.getInstance()
+            .createSignInIntentBuilder()
+            .setAvailableProviders(providers)
+            .build()
+
+        signInLauncher.launch(signInIntent)
+    }
+
+    private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult)
+    {
+        if(result.resultCode == RESULT_OK)
+        {
+            val userName =
+            Snackbar.make(AppDrawer.get().fragmentView, getString(R.string.user_login_message, FB.auth.getUsername()), Snackbar.LENGTH_LONG)
+                .show()
+
+            parentFragmentManager.popBackStack()
+        }
+        else
+        {
+            FB.crashlytics.logSimpleError("Login Error")
+            {
+                key("code", result.resultCode)
+                key("data", result.toString())
+            }
+
+            Snackbar.make(AppDrawer.get().fragmentView, getString(R.string.login_error), Snackbar.LENGTH_LONG)
+                .show()
+        }
     }
 }
