@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.R
 import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.classes.firebase.FB
+import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.classes.models.DbUser
 import com.enti.vintitres.cdi.aniolmoratogil.moduldosfirebasecdi.fragments.components.AppDrawer
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
@@ -108,24 +109,69 @@ class LoginScreen: Fragment() {
 
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult)
     {
-        if(result.resultCode == RESULT_OK)
-        {
-            val userName =
-            Snackbar.make(AppDrawer.get().fragmentView, getString(R.string.user_login_message, FB.auth.getUsername()), Snackbar.LENGTH_LONG)
-                .show()
-
-            parentFragmentManager.popBackStack()
-        }
-        else
-        {
+        if(result.resultCode != RESULT_OK){
             FB.crashlytics.logSimpleError("Login Error")
             {
                 key("code", result.resultCode)
                 key("data", result.toString())
             }
 
-            Snackbar.make(AppDrawer.get().fragmentView, getString(R.string.login_error), Snackbar.LENGTH_LONG)
-                .show()
+            sendToastError()
+            return
         }
+
+        val authUser = FB.auth.getAuthDbUser() ?: kotlin.run{
+            FB.crashlytics.logSimpleError("Login Error No User"){
+                key("code", result.resultCode)
+                key("data", result.toString())
+            }
+            sendToastError()
+            return
+        }
+
+        val id = authUser.id ?: kotlin.run{
+            FB.crashlytics.logSimpleError("No id"){
+                key("code", result.resultCode)
+                key("data", result.toString())
+            }
+            sendToastError()
+            return
+        }
+
+        FB.db.find<DbUser>(id,authUser.getTable(),
+            onSuccess = {dbUser ->
+                finalSaveUser(dbUser)
+            },
+            onFailure = {
+                finalSaveUser(authUser)
+            })
+    }
+
+    private fun finalSaveUser(dbUser: DbUser){
+        FB.db.save(dbUser,
+            onSuccess = {dbUser ->
+                FB.auth.setCurrentUser(dbUser)
+                sendToastSuccessAndClose()
+            },
+            onFailure = {
+                sendToastError()
+            })
+    }
+
+    private fun sendToastError(){
+        Snackbar.make(
+            AppDrawer.get().fragmentView,
+            "Error on Try Login",
+            Snackbar.LENGTH_LONG)
+            .show()
+    }
+
+    private fun sendToastSuccessAndClose(){
+        Snackbar.make(
+            AppDrawer.get().fragmentView,
+            getString(R.string.user_login_message, FB.auth.getCurrentUser()?.username),
+            Snackbar.LENGTH_LONG)
+            .show()
+        parentFragmentManager.popBackStack()
     }
 }
